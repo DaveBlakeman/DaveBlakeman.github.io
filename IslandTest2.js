@@ -1,3 +1,5 @@
+var players = [];
+
 class KillerIsland {
     //Converted from https://raw.githubusercontent.com/NitroCipher/NitroBlock/master/MainScript.js to Scratch 3.0 using Ext2to3!
     getInfo() {
@@ -6,7 +8,7 @@ class KillerIsland {
             "name": "KillerIsland",
             "blocks": [{
                 "opcode": "ncheck",
-                "blockType": "Boolean",
+                "blockType": "command",
                 "text": "nitroblock?",
                 "arguments": {}
             }, {
