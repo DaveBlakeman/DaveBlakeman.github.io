@@ -1,5 +1,4 @@
-class NitroBlock {
-    //Converted from https://raw.githubusercontent.com/NitroCipher/NitroBlock/master/MainScript.js to Scratch 3.0 using Ext2to3!
+class KillerIsland {
     getInfo() {
         return {
             "id": "NitroBlock",
@@ -423,4 +422,4 @@ class NitroBlock {
         return m;
     }
 }
-Scratch.extensions.register(new NitroBlock());
+Scratch.extensions.register(new KillerIsland());
