@@ -95,8 +95,8 @@ var players = [];
             ['r', 'get player %n costume', 'get_player_costume', 1], 
             ['r', 'get player %n score', 'get_player_score', 1] , 
             [' ', 'change player %n score by %n', 'change_player_score', 1, 1], 
-            [' ', 'set player %n name', 'set_player_name', 1], 
-            [' ', 'set player %n costume', 'set_player_costume', 1], 
+            [' ', 'set player %n name to %s', 'set_player_name', 1, 'name'], 
+            [' ', 'set player %n costume to %s', 'set_player_costume', 1, 'costume'], 
             [' ', 'add player with name %s ', 'add_player', ''], 
             [' ', 'remove player %n ', 'remove_player', 1] , 
             ['r', 'get index of player %s ', 'get_index_of_player', '']  
