@@ -65,9 +65,6 @@ class IslandTest {
                     },
 
                     filter: [TargetType.SPRITE, TargetType.STAGE]
-                },
-                {
-                    // Another block...
                 }
             ],
 
