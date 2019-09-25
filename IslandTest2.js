@@ -34,11 +34,7 @@ class IslandTest {
             color1: '#FF8C1A',
             color2: '#DB6E00',
 
-            name: formatMessage({
-                id: 'extensionName',
-                defaultMessage: 'Island Test',
-                description: 'The name of the "Island Test" extension'
-            }),
+            name: 'Island Test',
 
             blockIconURI: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAAAAACyOJm3AAAAFklEQVQYV2P4DwMMEMgAI/+DEUIMBgAEWB7i7uidhAAAAABJRU5ErkJggg==',
 
@@ -51,15 +47,9 @@ class IslandTest {
                     opcode: 'clear_all_scores', // becomes 'IslandTest.clear_all_scores'
                     blockType: BlockType.COMMAND,
                     branchCount: 0,
-                    text: formatMessage({
-                        id: 'clear_all_scores',
-                        defaultMessage: 'Clear all scores',
-                        description: 'Label on the "myReporter" block'
-                    }),
-
+                    text: 'clear_all_scores',
                     arguments: {
                     },
-
                     filter: [TargetType.SPRITE, TargetType.STAGE]
                 }
             ]
