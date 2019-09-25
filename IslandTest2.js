@@ -1,7 +1,6 @@
 var players = [];
 
 class KillerIsland {
-    //Converted from https://raw.githubusercontent.com/NitroCipher/NitroBlock/master/MainScript.js to Scratch 3.0 using Ext2to3!
     getInfo() {
         return {
             "id": "KillerIsland",
@@ -12,14 +11,10 @@ class KillerIsland {
                 "text": "clear all scores",
                 "arguments": {}
             }, {
-                "opcode": "color",
-                "blockType": "reporter",
-                "text": "color [color]",
-                "arguments": {
-                    "color": {
-                        "type": "color",
-                        "defaultValue": 0
-                    }
+                "opcode": "clear_all_players",
+                "blockType": "command",
+                "text": "clear all players",
+                "arguments": {}
                 }
             }, {
                 "opcode": "rgb",
@@ -269,6 +264,9 @@ class KillerIsland {
 		  players[playerIndex].score = 0;
 		}
     }
+	clear_all_players({}) {
+		players.length = 0;
+	}
     color({
         color
     }) {
