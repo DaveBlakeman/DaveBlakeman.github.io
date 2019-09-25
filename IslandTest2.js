@@ -7,9 +7,9 @@ class KillerIsland {
             "id": "KillerIsland",
             "name": "KillerIsland",
             "blocks": [{
-                "opcode": "ncheck",
+                "opcode": "clear_all_scores",
                 "blockType": "command",
-                "text": "nitroblock?",
+                "text": "clear all scores",
                 "arguments": {}
             }, {
                 "opcode": "color",
@@ -264,10 +264,10 @@ class KillerIsland {
             }
         };
     }
-    ncheck({
-        check
-    }) {
-        return true
+    clear_all_scores({}) {
+        for (playerIndex = 0; playerIndex < players.length; playerIndex++) {
+		  players[playerIndex].score = 0;
+		}
     }
     color({
         color
