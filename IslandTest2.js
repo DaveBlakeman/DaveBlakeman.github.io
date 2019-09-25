@@ -9,7 +9,7 @@ const formatMessage = require('format-message');
 // Core, Team, and Official extension classes should be registered statically with the Extension Manager.
 // See: scratch-vm/src/extension-support/extension-manager.js
 
-var players = [];
+
 
 class IslandTest {
     constructor (runtime) {
@@ -47,10 +47,11 @@ class IslandTest {
      * @property {string} MY_ARG - the string value of the argument.
      * @returns {string} a string which includes the block argument value.
      */
-    clear_all_scores (args) {
+    clear_all_scores () {
+		/*var players = [];
 		for (playerIndex = 0; playerIndex < players.length; playerIndex++) {
 		  players[playerIndex].score = 0;
-		}
+		}*/
     }
 }
 
