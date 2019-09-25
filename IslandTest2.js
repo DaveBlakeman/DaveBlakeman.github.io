@@ -28,20 +28,14 @@ class IslandTest {
         return {
             // Required: the machine-readable name of this extension.
             // Will be used as the extension's namespace.
-            id: 'IslandTest',
-
-            // Core extensions only: override the default extension block colors.
-            color1: '#FF8C1A',
-            color2: '#DB6E00',
-
-            name: 'Island Test',
-
-            blocks: [
+            "id": "IslandTest",
+            "name": "IslandTest",
+            "blocks": [
                 {
-                    opcode: 'clear_all_scores', 
-                    blockType: BlockType.COMMAND,
-                    text: 'clear_all_scores',
-                    arguments: {}
+                    "opcode": "clear_all_scores", 
+                    "blockType": "command",
+                    "text": "clear all scores",
+                    "arguments": {}
                 }
             ]
         };
