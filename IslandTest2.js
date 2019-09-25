@@ -36,21 +36,12 @@ class IslandTest {
 
             name: 'Island Test',
 
-            blockIconURI: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAAAAACyOJm3AAAAFklEQVQYV2P4DwMMEMgAI/+DEUIMBgAEWB7i7uidhAAAAABJRU5ErkJggg==',
-
-            menuIconURI: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAAAAACyOJm3AAAAFklEQVQYV2P4DwMMEMgAI/+DEUIMBgAEWB7i7uidhAAAAABJRU5ErkJggg==',
-
-            docsURI: 'https://....',
-
             blocks: [
                 {
-                    opcode: 'clear_all_scores', // becomes 'IslandTest.clear_all_scores'
+                    opcode: 'clear_all_scores', 
                     blockType: BlockType.COMMAND,
-                    branchCount: 0,
                     text: 'clear_all_scores',
-                    arguments: {
-                    },
-                    filter: [TargetType.SPRITE, TargetType.STAGE]
+                    arguments: {}
                 }
             ]
         };
@@ -68,3 +59,5 @@ class IslandTest {
 		}
     };
 }
+
+Scratch.extensions.register(new IslandTest());
