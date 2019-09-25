@@ -57,7 +57,7 @@ class IslandTest {
 		for (playerIndex = 0; playerIndex < players.length; playerIndex++) {
 		  players[playerIndex].score = 0;
 		}
-    };
+    }
 }
 
 Scratch.extensions.register(new IslandTest());
