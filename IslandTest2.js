@@ -51,10 +51,6 @@ class IslandTest {
                     opcode: 'clear_all_scores', // becomes 'IslandTest.clear_all_scores'
                     blockType: BlockType.COMMAND,
                     branchCount: 0,
- 
-                    // Required: the human-readable text on this block, including argument
-                    // placeholders. Argument placeholders should be in [MACRO_CASE] and
-                    // must be [ENCLOSED_WITHIN_SQUARE_BRACKETS].
                     text: formatMessage({
                         id: 'clear_all_scores',
                         defaultMessage: 'Clear all scores',
@@ -66,44 +62,7 @@ class IslandTest {
 
                     filter: [TargetType.SPRITE, TargetType.STAGE]
                 }
-            ],
-
-            // Optional: define extension-specific menus here.
-            menus: {
-                // Required: an identifier for this menu, unique within this extension.
-                menuA: [
-                    // Static menu: list items which should appear in the menu.
-                    {
-                        // Required: the value of the menu item when it is chosen.
-                        value: 'itemId1',
-
-                        // Optional: the human-readable label for this item.
-                        // Use `value` as the text if this is absent.
-                        text: formatMessage({
-                            id: 'menuA_item1',
-                            defaultMessage: 'Item One',
-                            description: 'Label for item 1 of menu A in "Some Blocks" extension'
-                        })
-                    },
-
-                    // The simplest form of a list item is a string which will be used as
-                    // both value and text.
-                    'itemId2'
-                ],
-
-                // Dynamic menu: returns an array as above.
-                // Called each time the menu is opened.
-                menuB: 'getItemsForMenuB',
-
-                // The examples above are shorthand for setting only the `items` property in this full form:
-                menuC: {
-                    // This flag makes a "droppable" menu: the menu will allow dropping a reporter in for the input.
-                    acceptReporters: true,
-
-                    // The `item` property may be an array or function name as in previous menu examples.
-                    items: [/*...*/] || 'getItemsForMenuC'
-                }
-            }
+            ]
         };
     };
 
