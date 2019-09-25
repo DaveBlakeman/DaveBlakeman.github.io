@@ -16,6 +16,7 @@ class IslandTest {
     }
 
     clear_all_scores () {
+		return true;
     }
 }
 
