@@ -122,72 +122,6 @@ class KillerIsland {
                         "defaultValue": ""
                     }
                 }
-            }, {
-                "opcode": "dPrompt",
-                "blockType": "reporter",
-                "text": "prompt user with [prompty]",
-                "arguments": {
-                    "prompty": {
-                        "type": "string",
-                        "defaultValue": "how are you?"
-                    }
-                }
-            }, {
-                "opcode": "repAll",
-                "blockType": "reporter",
-                "text": "replace all of [finder] in [string] with [replacer]",
-                "arguments": {
-                    "finder": {
-                        "type": "string",
-                        "defaultValue": ""
-                    },
-                    "string": {
-                        "type": "string",
-                        "defaultValue": ""
-                    },
-                    "replacer": {
-                        "type": "string",
-                        "defaultValue": ""
-                    }
-                }
-            }, {
-                "opcode": "greaterOrEqual",
-                "blockType": "Boolean",
-                "text": "[string1] ≥ [string2]",
-                "arguments": {
-                    "string1": {
-                        "type": "string",
-                        "defaultValue": ""
-                    },
-                    "string2": {
-                        "type": "string",
-                        "defaultValue": ""
-                    }
-                }
-            }, {
-                "opcode": "lessOrEqual",
-                "blockType": "Boolean",
-                "text": "[string1] ≤ [string2]",
-                "arguments": {
-                    "string1": {
-                        "type": "string",
-                        "defaultValue": ""
-                    },
-                    "string2": {
-                        "type": "string",
-                        "defaultValue": ""
-                    }
-                }
-            }, {
-                "opcode": "jQuGet",
-                "blockType": "reporter",
-                "text": "get data from url: [myURL]",
-                "arguments": {
-                    "myURL": {
-                        "type": "string",
-                        "defaultValue": "http://google.com"
-                    }
-                }
             }],
             "menus": {
                 supermath: this._formatMenu(['+', '-', '/', '*', '^', 'sqrt']),
@@ -250,31 +184,6 @@ class KillerIsland {
 		// not found => return 0
 		return 0;
 	}
-	
-    dPrompt({
-        prompty
-    }) {
-        return prompt(prompty);
-    }
-    repAll({
-        finder,
-        string,
-        replacer
-    }) {
-        return string.replace(new RegExp(finder, 'gi'), replacer);
-    }
-    greaterOrEqual({
-        string1,
-        string2
-    }) {
-        return (string1 >= string2);
-    }
-    lessOrEqual({
-        string1,
-        string2
-    }) {
-        return (string1 <= string2);
-    }
     jQuGet({
         myURL
     }) {
