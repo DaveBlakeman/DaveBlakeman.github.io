@@ -78,12 +78,16 @@ class KillerIsland {
                         "defaultValue": ""
                     }
                 }
-            },  {
-                "opcode": "blank",
+            }, {
+                "opcode": "change_player_costume",
                 "blockType": "command",
-                "text": "[string]",
+                "text": "change player [player_index] costume to [new_costume]",
                 "arguments": {
-                    "string": {
+                    "player_index": {
+                        "type": "number",
+                        "defaultValue": "1"
+                    },
+					"new_costume": {
                         "type": "string",
                         "defaultValue": ""
                     }
@@ -240,7 +244,11 @@ class KillerIsland {
 	}
 	change_player_name({player_index, new_name}) {
 		if ((playerIndex > 0) && (playerIndex <= players.length))
-		  players[playerIndex-1].name = newName;
+		  players[playerIndex-1].name = new_name;
+	}
+	change_player_costume({player_index, new_costume}) {	
+		if ((playerIndex > 0) && (playerIndex <= players.length))
+		  players[playerIndex-1].costume = new_costume;
 	}
     javablock({
         string
