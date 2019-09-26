@@ -113,17 +113,13 @@ class KillerIsland {
                     }
                 }
             }, {
-                "opcode": "strCont",
-                "blockType": "Boolean",
-                "text": "[string1] contains [string2]",
+                "opcode": "get_index_of_player",
+                "blockType": "reporter",
+                "text": "get index of player called [player_name]",
                 "arguments": {
-                    "string1": {
+                    "player_name": {
                         "type": "string",
-                        "defaultValue": "hello world"
-                    },
-                    "string2": {
-                        "type": "string",
-                        "defaultValue": "hello"
+                        "defaultValue": ""
                     }
                 }
             }, {
@@ -239,34 +235,22 @@ class KillerIsland {
 		if ((playerIndex > 0) && (playerIndex <= players.length))
 		  players[playerIndex-1].costume = new_costume;
 	}
-    add_player = function(player_name) {
+    add_player({player_name}) {
 		players.push({name: player_name, costume: "", score: 0}); 
 	}  
-	remove_player = function(player_index) {
+	remove_player({player_index}) {
 		if ((playerIndex > 0) && (playerIndex <= players.length))
 		   delete players[PlayerIndex-1];
 	}   
-	exclu({
-        bool1,
-        bool2
-    }) {
-        if (bool1 && bool2) {
-            return false;
-        } else {
-            if (bool1) {
-                return true;
-            }
-            if (bool2) {
-                return true;
-            }
-        }
-    }
-    strCont({
-        string1,
-        string2
-    }) {
-        return string1.includes(string2);
-    }
+    get_index_of_player({player_name}) {
+		for (playerIndex = 0; playerIndex < players.length; playerIndex++) {
+		  if (players[playerIndex].name == player_name)
+			  return playerIndex+1; // one-based index
+		}
+		// not found => return 0
+		return 0;
+	}
+	
     dPrompt({
         prompty
     }) {
