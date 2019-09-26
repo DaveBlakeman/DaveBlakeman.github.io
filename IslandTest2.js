@@ -16,23 +16,10 @@ class KillerIsland {
                 "text": "clear all players",
                 "arguments": {}
             }, {
-                "opcode": "textif",
+                "opcode": "get_player_count",
                 "blockType": "reporter",
-                "text": "if [bool] then [text1] else [text2]",
-                "arguments": {
-                    "bool": {
-                        "type": "Boolean",
-                        "defaultValue": ""
-                    },
-                    "text1": {
-                        "type": "string",
-                        "defaultValue": "hello"
-                    },
-                    "text2": {
-                        "type": "string",
-                        "defaultValue": "world"
-                    }
-                }
+                "text": "get player count",
+                "arguments": {}
             }, {
                 "opcode": "alertbox",
                 "blockType": "command",
@@ -234,17 +221,8 @@ class KillerIsland {
 	clear_all_players({}) {
 		players.length = 0;
 	}    
-	textif({
-        bool,
-        text1,
-        text2
-    }) {
-        if (bool) {
-            return text1
-        } else {
-            return text2
-        }
-
+	get_player_count({}) {
+        return players.length;
     }
     alertbox({
         string
