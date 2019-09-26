@@ -28,7 +28,7 @@ class KillerIsland {
                 "arguments": {
                     "player_index": {
                         "type": "number",
-                        "defaultValue": 1
+                        "defaultValue": "1"
                     }
                 }
             }, {
