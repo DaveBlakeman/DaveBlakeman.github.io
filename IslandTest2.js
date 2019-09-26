@@ -41,21 +41,13 @@ class KillerIsland {
                     }
                 }
             }, {
-                "opcode": "mathy",
+                "opcode": "get_player_score",
                 "blockType": "reporter",
-                "text": "[num1] [oper] [num2]",
+                "text": "get player score [player_index]",
                 "arguments": {
-                    "num1": {
+                    "player_index": {
                         "type": "number",
-                        "defaultValue": ""
-                    },
-                    "oper": {
-                        "type": "string",
-                        "menu": "supermath",
-                        "defaultValue": ""
-                    },
-                    "num2": {
-                        "type": "number"
+                        "defaultValue": "1"
                     }
                 }
             }, {
@@ -236,30 +228,12 @@ class KillerIsland {
 	    else  
 		  return players[playerIndex-1].costume; 
 	}
-    mathy({
-        num1,
-        oper,
-        num2
-    }) {
-        if (oper === '+') {
-            return (num1 + num2)
-        }
-        if (oper === '-') {
-            return (num1 - num2)
-        }
-        if (oper === '*') {
-            return (num1 * num2)
-        }
-        if (oper === '/') {
-            return (num1 / num2)
-        }
-        if (oper === '^') {
-            return Math.pow(num1, num2)
-        }
-        if (oper === 'sqrt') {
-            return (num1 * (Math.sqrt(num2)))
-        }
-    }
+	get_player_score({player_index}) {
+		if ((playerIndex < 1) || (playerIndex > players.length))
+		  return 0;
+	    else  
+		  return players[playerIndex-1].score;
+	}
     substringy({
         num1,
         num2,
