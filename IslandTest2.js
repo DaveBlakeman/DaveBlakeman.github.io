@@ -22,16 +22,6 @@ class KillerIsland {
                 "text": "get player count",
                 "arguments": {}
             }, {
-                "opcode": "get_player_name",
-                "blockType": "reporter",
-                "text": "get player name [player_index]",
-                "arguments": {
-                    "player_index": {
-                        "type": "number",
-                        "defaultValue": "1"
-                    }
-                }
-            }, {
                 "opcode": "textif",
                 "blockType": "reporter",
                 "text": "if [bool] then [text1] else [text2]",
@@ -252,12 +242,6 @@ class KillerIsland {
 	}
     get_player_count({}) {
         return players.length;
-    }
-    get_player_name({player_index}) {
-        if ((player_index < 1) || (player_index > players.length))
-		  return "";
-	    else  
-		  return players[player_index-1].name;
     }
     power({
         num,
