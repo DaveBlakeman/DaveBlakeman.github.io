@@ -23,7 +23,7 @@ class KillerIsland {
             }, {
                 "opcode": "get_player_name",
                 "blockType": "reporter",
-                "text": "get player name [player_index]",
+                "text": "get player [player_index] name",
                 "arguments": {
                     "player_index": {
                         "type": "number",
@@ -33,7 +33,7 @@ class KillerIsland {
             }, {
                 "opcode": "get_player_costume",
                 "blockType": "reporter",
-                "text": "get player costume [player_index]",
+                "text": "get player [player_index] costume",
                 "arguments": {
                     "player_index": {
                         "type": "number",
@@ -43,7 +43,7 @@ class KillerIsland {
             }, {
                 "opcode": "get_player_score",
                 "blockType": "reporter",
-                "text": "get player score [player_index]",
+                "text": "get player [player_index] score",
                 "arguments": {
                     "player_index": {
                         "type": "number",
@@ -53,7 +53,7 @@ class KillerIsland {
             }, {
                 "opcode": "change_player_score",
                 "blockType": "command",
-                "text": "change player score [player_index] by [score_increment]",
+                "text": "change player [player_index] score by [score_increment]",
                 "arguments": {
                     "player_index": {
                         "type": "number",
@@ -65,16 +65,20 @@ class KillerIsland {
                     }
                 }
             }, {
-                "opcode": "javablock",
-                "blockType": "reporter",
-                "text": "javascript [string]",
+                "opcode": "change_player_name",
+                "blockType": "command",
+                "text": "change player [player_index] name to [new_name]",
                 "arguments": {
-                    "string": {
+                    "player_index": {
+                        "type": "number",
+                        "defaultValue": "1"
+                    },
+					"new_name": {
                         "type": "string",
-                        "defaultValue": "window.alert(\"yay\")"
+                        "defaultValue": ""
                     }
                 }
-            }, {
+            },  {
                 "opcode": "blank",
                 "blockType": "command",
                 "text": "[string]",
@@ -230,9 +234,13 @@ class KillerIsland {
 	    else  
 		  return players[playerIndex-1].score;
 	}
-	change_player_score({player_index, scoreIncrement}) {
+	change_player_score({player_index, score_increment}) {
 		if ((playerIndex > 0) && (playerIndex <= players.length))
-		  players[playerIndex-1].score = players[playerIndex-1].score + scoreIncrement;
+		  players[playerIndex-1].score = players[playerIndex-1].score + score_increment;
+	}
+	change_player_name({player_index, new_name}) {
+		if ((playerIndex > 0) && (playerIndex <= players.length))
+		  players[playerIndex-1].name = newName;
 	}
     javablock({
         string
