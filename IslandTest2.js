@@ -93,21 +93,13 @@ class KillerIsland {
                     }
                 }
             }, {
-                "opcode": "itOfStr",
-                "blockType": "reporter",
-                "text": "word [num] of [string] separated by [seper]",
+                "opcode": "add_player",
+                "blockType": "command",
+                "text": "add player with name [player_name]",
                 "arguments": {
-                    "num": {
-                        "type": "number",
-                        "defaultValue": "2"
-                    },
-                    "string": {
+                    "player_name": {
                         "type": "string",
-                        "defaultValue": "hello world"
-                    },
-                    "seper": {
-                        "type": "string",
-                        "defaultValue": " "
+                        "defaultValue": ""
                     }
                 }
             }, {
@@ -250,24 +242,10 @@ class KillerIsland {
 		if ((playerIndex > 0) && (playerIndex <= players.length))
 		  players[playerIndex-1].costume = new_costume;
 	}
-    javablock({
-        string
-    }) {
-        return eval(string);
-    }
-    blank({
-        string
-    }) {}
-    itOfStr({
-        num,
-        string,
-        seper
-    }) {
-        var str = string;
-        var res = str.split(seper);
-        return (res[num - 1]);
-    }
-    exclu({
+    add_player = function(player_name) {
+		players.push({name: player_name, costume: "", score: 0}); 
+	}   
+	exclu({
         bool1,
         bool2
     }) {
