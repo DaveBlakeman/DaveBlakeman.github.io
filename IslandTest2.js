@@ -11,17 +11,6 @@ class KillerIsland {
                 "text": "clear all scores",
                 "arguments": {}
             }, {
-                "opcode": "clear_all_players",
-                "blockType": "command",
-                "text": "clear all players",
-                "arguments": {}
-                }
-            }, {
-                "opcode": "get_player_count",
-                "blockType": "reporter",
-                "text": "get player count",
-                "arguments": {}
-            }, {
                 "opcode": "textif",
                 "blockType": "reporter",
                 "text": "if [bool] then [text1] else [text2]",
@@ -233,21 +222,9 @@ class KillerIsland {
         };
     }
     clear_all_scores({}) {
-        for (playerIndex = 0; playerIndex < players.length; playerIndex++) {
+        for (let playerIndex = 0; playerIndex < players.length; playerIndex++) {
 		  players[playerIndex].score = 0;
 		}
-    }
-	clear_all_players({}) {
-		players.length = 0;
-	}
-    get_player_count({}) {
-        return players.length;
-    }
-    power({
-        num,
-        power
-    }) {
-        return Math.pow(num, power);
     }
     textif({
         bool,
