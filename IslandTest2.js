@@ -103,16 +103,13 @@ class KillerIsland {
                     }
                 }
             }, {
-                "opcode": "exclu",
-                "blockType": "Boolean",
-                "text": "[bool1] xor [bool2]",
+                "opcode": "remove_player",
+                "blockType": "command",
+                "text": "remove player [player_index]",
                 "arguments": {
-                    "bool1": {
-                        "type": "Boolean",
-                        "defaultValue": false
-                    },
-                    "bool2": {
-                        "type": "Boolean"
+                    "player_index": {
+                        "type": "number",
+                        "defaultValue": ""
                     }
                 }
             }, {
@@ -244,6 +241,10 @@ class KillerIsland {
 	}
     add_player = function(player_name) {
 		players.push({name: player_name, costume: "", score: 0}); 
+	}  
+	remove_player = function(player_index) {
+		if ((playerIndex > 0) && (playerIndex <= players.length))
+		   delete players[PlayerIndex-1];
 	}   
 	exclu({
         bool1,
