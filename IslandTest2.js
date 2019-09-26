@@ -51,21 +51,17 @@ class KillerIsland {
                     }
                 }
             }, {
-                "opcode": "substringy",
-                "blockType": "reporter",
-                "text": "letters [num1] through [num2] of [string]",
+                "opcode": "change_player_score",
+                "blockType": "command",
+                "text": "change player score [player_index] by [score_increment]",
                 "arguments": {
-                    "num1": {
+                    "player_index": {
                         "type": "number",
-                        "defaultValue": "2"
+                        "defaultValue": "1"
                     },
-                    "num2": {
+					"score_increment": {
                         "type": "number",
-                        "defaultValue": "5"
-                    },
-                    "string": {
-                        "type": "string",
-                        "defaultValue": "hello world"
+                        "defaultValue": "1"
                     }
                 }
             }, {
@@ -234,13 +230,10 @@ class KillerIsland {
 	    else  
 		  return players[playerIndex-1].score;
 	}
-    substringy({
-        num1,
-        num2,
-        string
-    }) {
-        return string.substring(num1 - 1, num2);
-    }
+	change_player_score({player_index, scoreIncrement}) {
+		if ((playerIndex > 0) && (playerIndex <= players.length))
+		  players[playerIndex-1].score = players[playerIndex-1].score + scoreIncrement;
+	}
     javablock({
         string
     }) {
