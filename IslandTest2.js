@@ -11,6 +11,11 @@ class KillerIsland {
                 "text": "clear all scores",
                 "arguments": {}
             }, {
+                "opcode": "clear_all_players",
+                "blockType": "command",
+                "text": "clear all players",
+                "arguments": {}
+            }, {
                 "opcode": "textif",
                 "blockType": "reporter",
                 "text": "if [bool] then [text1] else [text2]",
@@ -226,7 +231,10 @@ class KillerIsland {
 		  players[playerIndex].score = 0;
 		}
     }
-    textif({
+	clear_all_players({}) {
+		players.length = 0;
+	}    
+	textif({
         bool,
         text1,
         text2
