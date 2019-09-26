@@ -31,13 +31,13 @@ class KillerIsland {
                     }
                 }
             }, {
-                "opcode": "whenThis",
-                "blockType": "hat",
-                "text": "when [bool]",
+                "opcode": "get_player_costume",
+                "blockType": "reporter",
+                "text": "get player costume [player_index]",
                 "arguments": {
-                    "bool": {
-                        "type": "Boolean",
-                        "defaultValue": ""
+                    "player_index": {
+                        "type": "number",
+                        "defaultValue": "1"
                     }
                 }
             }, {
@@ -230,11 +230,12 @@ class KillerIsland {
 	    else  
 		  return players[player_index-1].name;
     }
-    whenThis({
-        bool
-    }) {
-        return bool;
-    }
+	get_player_costume({player_index}) {
+        if ((playerIndex < 1) || (playerIndex > players.length))
+		  return 0;
+	    else  
+		  return players[playerIndex-1].costume; 
+	}
     mathy({
         num1,
         oper,
