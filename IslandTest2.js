@@ -17,35 +17,18 @@ class KillerIsland {
                 "arguments": {}
                 }
             }, {
-                "opcode": "rgb",
+                "opcode": "get_player_count",
                 "blockType": "reporter",
-                "text": "red [r] green [g] blue [b]",
-                "arguments": {
-                    "r": {
-                        "type": "number",
-                        "defaultValue": 255
-                    },
-                    "g": {
-                        "type": "number",
-                        "defaultValue": 0
-                    },
-                    "b": {
-                        "type": "number",
-                        "defaultValue": 0
-                    }
-                }
+                "text": "get player count",
+                "arguments": {}
             }, {
-                "opcode": "power",
+                "opcode": "get_player_name",
                 "blockType": "reporter",
-                "text": "[num] ^ [power]",
+                "text": "get player name [player_index]",
                 "arguments": {
-                    "num": {
+                    "player_index": {
                         "type": "number",
-                        "defaultValue": 5
-                    },
-                    "power": {
-                        "type": "number",
-                        "defaultValue": 2
+                        "defaultValue": 1
                     }
                 }
             }, {
@@ -267,17 +250,14 @@ class KillerIsland {
 	clear_all_players({}) {
 		players.length = 0;
 	}
-    color({
-        color
-    }) {
-        return Math.pow(color, 1);
+    get_player_count({}) {
+        return players.length;
     }
-    rgb({
-        r,
-        g,
-        b
-    }) {
-        return ((((r * 256) + g) * 256) + b);
+    get_player_name({player_index}) {
+        if ((player_index < 1) || (player_index > players.length))
+		  return "";
+	    else  
+		  return players[player_index-1].name;
     }
     power({
         num,
