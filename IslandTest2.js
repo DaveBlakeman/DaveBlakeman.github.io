@@ -53,7 +53,7 @@ class KillerIsland {
             }, {
                 "opcode": "change_player_score",
                 "blockType": "command",
-                "text": "change player [player_index] score by [score_increment]",
+                "text": "set player [player_index] score to [new_score]",
                 "arguments": {
                     "player_index": {
                         "type": "number",
