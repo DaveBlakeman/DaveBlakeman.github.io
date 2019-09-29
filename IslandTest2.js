@@ -59,7 +59,7 @@ class KillerIsland {
                         "type": "number",
                         "defaultValue": "1"
                     },
-					"score_increment": {
+					"new_score": {
                         "type": "number",
                         "defaultValue": "1"
                     }
@@ -157,9 +157,9 @@ class KillerIsland {
 	    else  
 		  return players[player_index-1].score;
 	}
-	change_player_score({player_index, score_increment}) {
+	change_player_score({player_index, new_score}) {
 		if ((player_index > 0) && (player_index <= players.length))
-		  players[player_index-1].score = players[player_index-1].score + score_increment;
+		  players[player_index-1].score = new_score;
 	}
 	change_player_name({player_index, new_name}) {
 		if ((player_index > 0) && (player_index <= players.length))
