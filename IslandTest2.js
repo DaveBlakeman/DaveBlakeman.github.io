@@ -129,8 +129,8 @@ class KillerIsland {
         };
     }
     clear_all_scores({}) {
-        for (let playerIndex = 0; playerIndex < players.length; playerIndex++) {
-		  players[playerIndex].score = 0;
+        for (let player_index = 0; player_index < players.length; player_index++) {
+		  players[player_index].score = 0;
 		}
     }
 	clear_all_players({}) {
@@ -146,40 +146,40 @@ class KillerIsland {
 		  return players[player_index-1].name;
     }
 	get_player_costume({player_index}) {
-        if ((playerIndex < 1) || (playerIndex > players.length))
+        if ((player_index < 1) || (player_index > players.length))
 		  return 0;
 	    else  
-		  return players[playerIndex-1].costume; 
+		  return players[player_index-1].costume; 
 	}
 	get_player_score({player_index}) {
-		if ((playerIndex < 1) || (playerIndex > players.length))
+		if ((player_index < 1) || (player_index > players.length))
 		  return 0;
 	    else  
-		  return players[playerIndex-1].score;
+		  return players[player_index-1].score;
 	}
 	change_player_score({player_index, score_increment}) {
-		if ((playerIndex > 0) && (playerIndex <= players.length))
-		  players[playerIndex-1].score = players[playerIndex-1].score + score_increment;
+		if ((player_index > 0) && (player_index <= players.length))
+		  players[player_index-1].score = players[player_index-1].score + score_increment;
 	}
 	change_player_name({player_index, new_name}) {
-		if ((playerIndex > 0) && (playerIndex <= players.length))
-		  players[playerIndex-1].name = new_name;
+		if ((player_index > 0) && (player_index <= players.length))
+		  players[player_index-1].name = new_name;
 	}
 	change_player_costume({player_index, new_costume}) {	
-		if ((playerIndex > 0) && (playerIndex <= players.length))
-		  players[playerIndex-1].costume = new_costume;
+		if ((player_index > 0) && (player_index <= players.length))
+		  players[player_index-1].costume = new_costume;
 	}
     add_player({player_name}) {
 		players.push({name: player_name, costume: "", score: 0}); 
 	}  
 	remove_player({player_index}) {
-		if ((playerIndex > 0) && (playerIndex <= players.length))
-		   delete players[PlayerIndex-1];
+		if ((player_index > 0) && (player_index <= players.length))
+		   delete players[player_index-1];
 	}   
     get_index_of_player({player_name}) {
-		for (playerIndex = 0; playerIndex < players.length; playerIndex++) {
-		  if (players[playerIndex].name == player_name)
-			  return playerIndex+1; // one-based index
+		for (player_index = 0; player_index < players.length; player_index++) {
+		  if (players[player_index].name == player_name)
+			  return player_index+1; // one-based index
 		}
 		// not found => return 0
 		return 0;
