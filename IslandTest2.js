@@ -121,8 +121,8 @@ class KillerIsland {
                         "type": "string",
                         "defaultValue": ""
                     }
-                },
-				{
+                }
+			}, {
                 "opcode": "banana",
                 "blockType": "command",
                 "text": "Banana",
