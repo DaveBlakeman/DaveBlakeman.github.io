@@ -121,6 +121,12 @@ class KillerIsland {
                         "type": "string",
                         "defaultValue": ""
                     }
+                },
+				{
+                "opcode": "banana",
+                "blockType": "command",
+                "text": "Banana",
+                "arguments": {
                 }
             }],
             "menus": {
@@ -183,6 +189,8 @@ class KillerIsland {
 		}
 		// not found => return 0
 		return 0;
+	}
+	banana({}) {
 	}
     jQuGet({
         myURL
