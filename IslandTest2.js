@@ -4,7 +4,7 @@ class KillerIsland {
     getInfo() {
         return {
             "id": "KillerIsland",
-            "name": "KillerIsland",
+            "name": "TurnerIsland",
             "blocks": [{
                 "opcode": "clear_all_scores",
                 "blockType": "command",
