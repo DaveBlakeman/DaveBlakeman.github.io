@@ -1,0 +1,6 @@
+in ApiV2 folder:-
+set DEBUG=apiv2:* & npm start
+
+http://localhost:3000/api/v2/users/2
+http://localhost:3000/api/v2/users/?username=isobel
+http://localhost:3000/api/v2/users/

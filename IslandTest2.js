@@ -122,12 +122,7 @@ class KillerIsland {
                         "defaultValue": ""
                     }
                 }
-			}, {
-                "opcode": "banana",
-                "blockType": "command",
-                "text": "Banana",
-                "arguments": {}
-            }],
+			}],
             "menus": {
                 supermath: this._formatMenu(['+', '-', '/', '*', '^', 'sqrt']),
             }
@@ -152,7 +147,7 @@ class KillerIsland {
     }
 	get_player_costume({player_index}) {
         if ((player_index < 1) || (player_index > players.length))
-		  return 0;
+		  return "";
 	    else  
 		  return players[player_index-1].costume; 
 	}
@@ -188,9 +183,6 @@ class KillerIsland {
 		}
 		// not found => return 0
 		return 0;
-	}
-	banana({}) {
-		return;
 	}
     jQuGet({
         myURL
