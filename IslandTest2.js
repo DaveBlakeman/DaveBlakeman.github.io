@@ -126,8 +126,7 @@ class KillerIsland {
                 "opcode": "banana",
                 "blockType": "command",
                 "text": "Banana",
-                "arguments": {
-                }
+                "arguments": {}
             }],
             "menus": {
                 supermath: this._formatMenu(['+', '-', '/', '*', '^', 'sqrt']),
@@ -191,6 +190,7 @@ class KillerIsland {
 		return 0;
 	}
 	banana({}) {
+		return;
 	}
     jQuGet({
         myURL
