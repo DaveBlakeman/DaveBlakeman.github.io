@@ -16,16 +16,31 @@ function HandleSqlRequest(sql, req, res, next) {
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
+	var connection = res.locals.connection
+	var username = req.query.username ? connection.escape(req.query.username) : ''
+	var sql = ''
+	
 	if (req.query.username) 
-	    HandleSqlRequest('SELECT * from User where UserName = ' + res.locals.connection.escape(req.query.username), req, res, next)
+	    sql = 'SELECT * FROM User WHERE UserName = ' + username 
 	else
-	    HandleSqlRequest('SELECT * from User', req, res, next)
+	    sql = 'SELECT * FROM User WHERE (1=1) '
+	
+	var officeid = parseInt(req.query.officeid);
+	if (!isNaN(officeid)) {
+		sql = sql + ' AND UserOfficeId = ' + req.query.officeid
+	}
+	
+	HandleSqlRequest(sql, req, res, next)
 });
 
 /* GET user by id. */
 router.get('/:userid', function(req, res, next) {
-	var userid = req.params.userid;
-	HandleSqlRequest('SELECT * from User where UserId = ' + res.locals.connection.escape(userid), req, res, next)
+	var userid = parseInt(req.params.userid);
+	
+	if (!isNaN(userid))
+		HandleSqlRequest('SELECT * FROM User WHERE UserId = ' + req.params.userid, req, res, next)
+	else
+		res.send(JSON.stringify({"status": 200, "error": "invalid user id", "response": ""}));
 });
 
 module.exports = router;
