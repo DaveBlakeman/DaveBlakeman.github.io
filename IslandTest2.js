@@ -170,7 +170,7 @@ class KillerIsland {
 		  players[player_index-1].costume = new_costume;
 	}
     add_player({player_name}) {
-		players.push({name: player_name, costume: "", score: 0}); 
+		players.push({name: player_name, costume: "2", score: 0}); 
 	}  
 	remove_player({player_index}) {
 		if ((player_index > 0) && (player_index <= players.length))
