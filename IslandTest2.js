@@ -146,12 +146,14 @@ class KillerIsland {
 		  return players[player_index-1].name;
     }
 	get_player_costume({player_index}) {
-		return "boo " + player_index.toString();
-        /*if ((player_index < 1) || (player_index > players.length))
-		  return "";
-	    else  
-		  return players[player_index-1].costume; 
-	  */
+		//return "boo " + player_index.toString();
+        if ((player_index < 1) || (player_index > players.length))
+		  return "<null>";
+	    else { 
+		  costume = players[player_index-1].costume; 
+		  alert("Costume is " + costume);
+		  return costume;
+		}
 	}
 	get_player_score({player_index}) {
 		if ((player_index < 1) || (player_index > players.length))
