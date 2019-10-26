@@ -128,28 +128,28 @@ class KillerIsland {
             }
         };
     }
-	function PlayerRec(player_name, player_costume, player_score {
+	function PlayerRec(player_name, player_costume, player_score) {
 		this.name = (player_name != undefined) ? player_name : '';
 		this.costume=(player_costume != undefined) ? player_costume : '';
 		this.score=(player_score != undefined) ? player_score : 0;
 	}
-    clear_all_scores({}) {
-        for (let player_index = 0; player_index < players.length; player_index++) {
+	clear_all_scores({}) {
+		for (let player_index = 0; player_index < players.length; player_index++) {
 		  players[player_index].score = 0;
 		}
-    }
+	}
 	clear_all_players({}) {
 		players.length = 0;
-	}    
+	}
 	get_player_count({}) {
-        return players.length;
-    }
-    get_player_name({player_index}) {
-        if ((player_index < 1) || (player_index > players.length))
+		return players.length;
+	}
+	get_player_name({player_index}) {
+		if ((player_index < 1) || (player_index > players.length))
 		  return "";
-	    else  
+		else  
 		  return players[player_index-1].name;
-    }
+	}
 	get_player_costume({player_index}) {
 		if ((player_index < 1) || (player_index > players.length))
 		  return "<null>";
@@ -176,14 +176,14 @@ class KillerIsland {
 		if ((player_index > 0) && (player_index <= players.length))
 		  players[player_index-1].costume = new_costume;
 	}
-    add_player({player_name}) {
+	add_player({player_name}) {
 		players.push(new PlayerRec (player_name, "", 0)); 
 	}  
 	remove_player({player_index}) {
 		if ((player_index > 0) && (player_index <= players.length))
 		   delete players[player_index-1];
 	}   
-    get_index_of_player({player_name}) {
+	get_index_of_player({player_name}) {
 		for (player_index = 0; player_index < players.length; player_index++) {
 		  if (players[player_index].name == player_name)
 			  return player_index+1; // one-based index
@@ -191,9 +191,9 @@ class KillerIsland {
 		// not found => return 0
 		return 0;
 	}
-    jQuGet({
-        myURL
-    }) {
+	jQuGet({
+		myURL
+	}) {
 
         $.ajaxSetup({
             async: false
