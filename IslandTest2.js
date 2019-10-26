@@ -146,7 +146,7 @@ class KillerIsland {
 		  return players[player_index-1].name;
     }
 	get_player_costume({player_index}) {
-		return "boo" + player_index;
+		return "boo " + player_index.toString();
         /*if ((player_index < 1) || (player_index > players.length))
 		  return "";
 	    else  
