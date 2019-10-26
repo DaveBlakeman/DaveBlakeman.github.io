@@ -155,7 +155,7 @@ class KillerIsland {
 		  return "<null>";
 	    else { 
 		  var costume = players[player_index-1].costume; 
-		  return "Costume = " + costume;
+		  return costume;
 		}
 	}
 	get_player_score({player_index}) {
