@@ -1,5 +1,9 @@
 var players = [];
-
+function PlayerRec(player_name, player_costume, player_score) {
+	this.name = (player_name != undefined) ? player_name : '';
+	this.costume = (player_costume != undefined) ? player_costume : '';
+	this.score = (player_score != undefined) ? player_score : 0;
+}
 class KillerIsland {
     getInfo() {
         return {
@@ -128,11 +132,7 @@ class KillerIsland {
             }
         };
     }
-	function PlayerRec(player_name, player_costume, player_score) {
-		this.name = (player_name != undefined) ? player_name : '';
-		this.costume=(player_costume != undefined) ? player_costume : '';
-		this.score=(player_score != undefined) ? player_score : 0;
-	}
+
 	clear_all_scores({}) {
 		for (let player_index = 0; player_index < players.length; player_index++) {
 		  players[player_index].score = 0;
