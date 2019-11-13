@@ -126,6 +126,12 @@ class KillerIsland {
                         "defaultValue": ""
                     }
                 }
+			}, {
+                "opcode": "get_users_from_api",
+                "blockType": "reporter",
+                "text": "get_users_from_api",
+                "arguments": {}
+                }
 			}],
             "menus": {
                 supermath: this._formatMenu(['+', '-', '/', '*', '^', 'sqrt']),
@@ -191,14 +197,13 @@ class KillerIsland {
 		// not found => return 0
 		return 0;
 	}
-	jQuGet({
-		myURL
+	get_users_from_api({
 	}) {
 
         $.ajaxSetup({
             async: false
         });
-        $.get('https://cors-anywhere.herokuapp.com/' + myURL, function(data) {
+        $.get('https://killerisland.herokuapp.com/api/v2/users', function(data) {
             window.httpdata = data;
         });
         return window.httpdata;
