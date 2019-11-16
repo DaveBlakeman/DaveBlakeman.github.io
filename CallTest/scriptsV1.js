@@ -10,11 +10,12 @@ request.onload = function() {
   var data = JSON.parse(this.response)
   console.log(data)
   if (request.status >= 200 && request.status < 400) {
- //     data.response.forEach(user => {
-		  console.log(data.response.length)
-		  result = data.response.length
-//	  }
-//     )
+      data.response.forEach(user => {
+		  console.log(user.UserName)
+		  console.log(user.UserCostume)
+		  console.log(user.UserScore)
+	  }
+     )
   } else {
     console.log('error')
   }
@@ -22,7 +23,3 @@ request.onload = function() {
 
 // Send request
 request.send()
-if (request.status >= 200 && request.status < 400) {
-  console.log('length = ')
-  console.log(result)
-}
