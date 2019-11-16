@@ -1,3 +1,4 @@
+var initialised = false;
 var players = [];
 function PlayerRec(player_name, player_costume, player_score) {
 	this.name = (player_name != undefined) ? player_name : '';
@@ -197,17 +198,6 @@ class KillerIsland {
 		// not found => return 0
 		return 0;
 	}
-	get_users_from_api({
-	}) {
-
-        $.ajaxSetup({
-            async: false
-        });
-        $.get('https://killerisland.herokuapp.com/api/v2/users', function(data) {
-            window.httpdata = data;
-        });
-        return window.httpdata;
-    }
     _formatMenu(menu) {
         const m = [];
         for (let i = 0; i < menu.length; i++) {
@@ -220,3 +210,32 @@ class KillerIsland {
     }
 }
 Scratch.extensions.register(new KillerIsland());
+
+// now load the users!
+
+var request = new XMLHttpRequest()
+var result = 0;
+
+// Open a new connection, using the GET request on the URL endpoint
+request.open('GET', 'https://killerisland.herokuapp.com/api/v2/users', true)
+
+request.onload = function() {
+  // Begin accessing JSON data here
+  initialised = true;
+  console.log(this.response)
+  var data = JSON.parse(this.response)
+  console.log(data)
+  if (request.status >= 200 && request.status < 400) {
+      data.response.forEach(user => {
+		  console.log(user.UserName)
+		  console.log(user.UserCostume)
+		  console.log(user.UserScore)
+	  }
+     )
+  } else {
+    console.log('error')
+  }
+}
+
+// Send request
+request.send()
