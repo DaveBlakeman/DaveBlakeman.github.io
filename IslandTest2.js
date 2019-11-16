@@ -212,7 +212,7 @@ class KillerIsland {
 Scratch.extensions.register(new KillerIsland());
 
 // now load the users!
-
+/*
 var request = new XMLHttpRequest()
 var result = 0;
 
@@ -239,3 +239,4 @@ request.onload = function() {
 
 // Send request
 request.send()
+*/
