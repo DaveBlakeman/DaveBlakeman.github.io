@@ -135,7 +135,7 @@ class KillerIsland {
             }
         }
     }
-    clear_all_scores({}) {
+    clear_all_scores() {
         for (let player_index = 0; player_index < KIPlayers.length; player_index++) {
           KIPlayers[player_index].score = 0;
         }
