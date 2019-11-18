@@ -133,20 +133,20 @@ class KillerIsland {
             "menus": {
                 supermath: this._formatMenu(["+", "-", "/", "*", "^", "sqrt"])
             }
-        }
+        };
     }
     clear_all_scores() {
         for (let player_index = 0; player_index < KIPlayers.length; player_index++) {
           KIPlayers[player_index].score = 0;
         }
     }
-    clear_all_players({}) {
+    clear_all_players() {
         KIPlayers.length = 0;
     }
-    get_player_count({}) {
+    get_player_count() {
         return KIPlayers.length;
     }
-    get_player_name({player_index}) {
+    get_player_name(player_index) {
         if ((player_index < 1) || (player_index > KIPlayers.length))
           return "";
         else  
