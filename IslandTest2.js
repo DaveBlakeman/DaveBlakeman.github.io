@@ -146,8 +146,8 @@ class KillerIsland {
         };
     }
     initialise_game() {
+		KIinitialised = false;
 		var request = new XMLHttpRequest();
-		var result = 0;
 
 		// Open a new connection, using the GET request on the URL endpoint
 		request.open('GET', 'https://killerisland.herokuapp.com/api/v2/users', true);
