@@ -7,7 +7,7 @@ class KillerIsland {
             "id": "KillerIsland",
             "name": "TurnerIsland",
             "blocks": [
-			/*{
+			{
                 "opcode": "initialise_game",
                 "blockType": "command",
                 "text": "initialise game",
@@ -17,7 +17,7 @@ class KillerIsland {
                 "blockType": "Boolean",
                 "text": "game initialised",
                 "arguments": {}
-            },*/ {
+            }, {
                 "opcode": "clear_all_scores",
                 "blockType": "command",
                 "text": "clear all scores",
