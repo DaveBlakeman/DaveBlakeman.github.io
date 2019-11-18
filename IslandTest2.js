@@ -163,6 +163,7 @@ class KillerIsland {
 				  console.log(user.UserName);
 				  console.log(user.UserCostume);
 				  console.log(user.UserScore);
+				  KIPlayers.push({"name": user.UserName, "costume": user.UserCostume, "score": user.UserScore}); 
 			  }
 			 );
 		  } else {
