@@ -145,10 +145,35 @@ class KillerIsland {
             }
         };
     }
-	initialise_game() {
+    initialise_game() {
+		var request = new XMLHttpRequest();
+		var result = 0;
+
+		// Open a new connection, using the GET request on the URL endpoint
+		request.open('GET', 'https://killerisland.herokuapp.com/api/v2/users', true);
+
+		request.onload = function() {
+		  // Begin accessing JSON data here
+		  KIinitialised = true;
+		  console.log(this.response);
+		  var data = JSON.parse(this.response);
+		  console.log(data);
+		  if (request.status >= 200 && request.status < 400) {
+			  data.response.forEach(user => {
+				  console.log(user.UserName);
+				  console.log(user.UserCostume);
+				  console.log(user.UserScore);
+			  }
+			 );
+		  } else {
+			console.log('error');
+		  }
+		};
+		// Send request
+		request.send();
     }
-	game_initialised() {
-		return KIinitialised;
+    game_initialised() {
+        return KIinitialised;
 	}
     clear_all_scores() {
         for (let player_index = 0; player_index < KIPlayers.length; player_index++) {
