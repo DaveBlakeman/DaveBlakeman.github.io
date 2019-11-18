@@ -158,6 +158,7 @@ class KillerIsland {
 		  console.log(this.response);
 		  var data = JSON.parse(this.response);
 		  console.log(data);
+		  KIPlayers.length = 0;
 		  if (request.status >= 200 && request.status < 400) {
 			  data.response.forEach(user => {
 				  console.log(user.UserName);
