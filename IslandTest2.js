@@ -12,6 +12,16 @@ class KillerIsland {
                 "text": "clear all scores",
                 "arguments": {}
             }, {
+                "opcode": "initialise_game",
+                "blockType": "command",
+                "text": "initialise game",
+                "arguments": {}
+            }, {
+                "opcode": "game_initialised",
+                "blockType": "reporter",
+                "text": "game initialised",
+                "arguments": {}
+            }, {
                 "opcode": "clear_all_Players",
                 "blockType": "command",
                 "text": "clear all Players",
@@ -135,6 +145,11 @@ class KillerIsland {
             }
         };
     }
+	initialise_game() {
+    }
+	game_initialised() {
+		return KIinitialised;
+	}
     clear_all_scores() {
         for (let player_index = 0; player_index < KIPlayers.length; player_index++) {
           KIPlayers[player_index].score = 0;
