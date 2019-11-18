@@ -152,7 +152,7 @@ class KillerIsland {
         else  
           return KIPlayers[player_index-1].name;
     }
-    get_player_costume({player_index}) {
+    get_player_costume(player_index) {
         if ((player_index < 1) || (player_index > KIPlayers.length))
           return "<null>";
         else { 
@@ -160,32 +160,32 @@ class KillerIsland {
           return costume;
         }
     }
-    get_player_score({player_index}) {
+    get_player_score(player_index) {
         if ((player_index < 1) || (player_index > KIPlayers.length))
           return 0;
         else  
           return KIPlayers[player_index-1].score;
     }
-    change_player_score({player_index, new_score}) {
+    change_player_score(player_index, new_score) {
         if ((player_index > 0) && (player_index <= KIPlayers.length))
           KIPlayers[player_index-1].score = new_score;
     }
-    change_player_name({player_index, new_name}) {
+    change_player_name(player_index, new_name) {
         if ((player_index > 0) && (player_index <= KIPlayers.length))
           KIPlayers[player_index-1].name = new_name;
     }
-    change_player_costume({player_index, new_costume}) {    
+    change_player_costume(player_index, new_costume) {    
         if ((player_index > 0) && (player_index <= KIPlayers.length))
           KIPlayers[player_index-1].costume = new_costume;
     }
-    add_player({player_name}) {
+    add_player(player_name) {
         KIPlayers.push({"name": player_name, "costume": "", "score": 0}); 
     }  
-    remove_player({player_index}) {
+    remove_player(player_index) {
         if ((player_index > 0) && (player_index <= KIPlayers.length))
            delete KIPlayers[player_index-1];
     }   
-    get_index_of_player({player_name}) {
+    get_index_of_player(player_name) {
         for (let player_index = 0; player_index < KIPlayers.length; player_index++) {
           if (KIPlayers[player_index].name == player_name)
               return player_index+1; // one-based index
