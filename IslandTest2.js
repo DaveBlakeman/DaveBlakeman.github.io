@@ -2,6 +2,36 @@
 var KIinitialised = false;
 var KIPlayers = [];
 
+function load_game() {
+	KIinitialised = false;
+	var request = new XMLHttpRequest();
+
+	// Open a new connection, using the GET request on the URL endpoint
+	request.open('GET', 'https://killerisland.herokuapp.com/api/v2/users', true);
+
+	request.onload = function() {
+	  // Begin accessing JSON data here
+	  KIinitialised = true;
+	  console.log(this.response);
+	  var data = JSON.parse(this.response);
+	  console.log(data);
+	  KIPlayers.length = 0;
+	  if (request.status >= 200 && request.status < 400) {
+		  data.response.forEach(user => {
+			  console.log(user.UserName);
+			  console.log(user.UserCostume);
+			  console.log(user.UserScore);
+			  KIPlayers.push({"name": user.UserName, "costume": user.UserCostume, "score": user.UserScore}); 
+		  }
+		 );
+	  } else {
+		console.log('error');
+	  }
+	};
+	// Send request
+	request.send();
+}
+
 function dump_players(caption) {
 	console.log(caption);
 	KIPlayers.forEach(function (user){
@@ -156,33 +186,9 @@ class KillerIsland {
         };
     }
     initialise_game() {
-		KIinitialised = false;
-		var request = new XMLHttpRequest();
-
-		// Open a new connection, using the GET request on the URL endpoint
-		request.open('GET', 'https://killerisland.herokuapp.com/api/v2/users', true);
-
-		request.onload = function() {
-		  // Begin accessing JSON data here
-		  KIinitialised = true;
-		  console.log(this.response);
-		  var data = JSON.parse(this.response);
-		  console.log(data);
-		  KIPlayers.length = 0;
-		  if (request.status >= 200 && request.status < 400) {
-			  data.response.forEach(user => {
-				  console.log(user.UserName);
-				  console.log(user.UserCostume);
-				  console.log(user.UserScore);
-				  KIPlayers.push({"name": user.UserName, "costume": user.UserCostume, "score": user.UserScore}); 
-			  }
-			 );
-		  } else {
-			console.log('error');
-		  }
-		};
-		// Send request
-		request.send();
+		$( document ).ready(function() {
+			load_game();
+		});
     }
     game_initialised() {
         return KIinitialised;
