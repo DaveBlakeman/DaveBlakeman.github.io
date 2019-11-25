@@ -32,10 +32,6 @@ var load_game  = async function () {
 	request.send();
 };
 
-var load_game_sync = async function () {
-	await load_game;
-};
-
 function dump_players(caption) {
 	console.log(caption);
 	KIPlayers.forEach(function (user){
@@ -190,7 +186,7 @@ class KillerIsland {
         };
     }
     initialise_game() {
-		load_game_sync();
+		load_game();
     }
     game_initialised() {
         return KIinitialised;
