@@ -1,8 +1,8 @@
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
 var KIinitialised = false;
 var KIPlayers = [];
 
-function load_game() {
+var load_game  = async function () {
 	KIinitialised = false;
 	var request = new XMLHttpRequest();
 
@@ -30,7 +30,11 @@ function load_game() {
 	};
 	// Send request
 	request.send();
-}
+};
+
+var load_game_sync = async function () {
+	await load_game;
+};
 
 function dump_players(caption) {
 	console.log(caption);
@@ -186,9 +190,7 @@ class KillerIsland {
         };
     }
     initialise_game() {
-		$( document ).ready(function() {
-			load_game();
-		});
+		load_game_sync();
     }
     game_initialised() {
         return KIinitialised;
