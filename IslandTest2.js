@@ -1,6 +1,15 @@
+/* jshint esversion: 6 */
 var KIinitialised = false;
 var KIPlayers = [];
 
+function dump_players(caption) {
+	console.log(caption);
+	KIPlayers.forEach(function (user){
+		console.log(user);
+	});
+	console.log("");	
+}
+	
 class KillerIsland {
     getInfo() {
         return {
@@ -190,12 +199,14 @@ class KillerIsland {
         return KIPlayers.length;
     }
     get_player_name(player_index) {
+		dump_players("get_player_name");
         if ((player_index < 1) || (player_index > KIPlayers.length))
           return "";
         else  
           return KIPlayers[player_index-1].name;
     }
     get_player_costume(player_index) {
+        dump_players("get_player_costume");
         if ((player_index < 1) || (player_index > KIPlayers.length))
           return "<null>";
         else { 
@@ -204,6 +215,7 @@ class KillerIsland {
         }
     }
     get_player_score(player_index) {
+        dump_players("get_player_score");
         if ((player_index < 1) || (player_index > KIPlayers.length))
           return 0;
         else  
@@ -229,6 +241,7 @@ class KillerIsland {
            delete KIPlayers[player_index-1];
     }   
     get_index_of_player(player_name) {
+		dump_players("get_index_of_player");
         for (let player_index = 0; player_index < KIPlayers.length; player_index++) {
           if (KIPlayers[player_index].name == player_name)
               return player_index+1; // one-based index
