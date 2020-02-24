@@ -173,15 +173,6 @@ class KillerIsland {
                         "defaultValue": ""
                     }
                 }
-            }, {
-                "opcode": "get_users_from_api",
-                "blockType": "reporter",
-                "text": "get_users_from_api",
-                "arguments": {}
-                }
-            ],
-            "menus": {
-                supermath: this._formatMenu(["+", "-", "/", "*", "^", "sqrt"])
             }
         };
     }
