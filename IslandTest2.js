@@ -201,8 +201,10 @@ class KillerIsland {
 		dump_players("get_player_name");
         if ((player_index < 1) || (player_index > KIPlayers.length))
           return "";
-        else  
-          return KIPlayers[player_index-1].name;
+        else  {
+			console.log(KIPlayers[player_index-1].name);
+            return KIPlayers[player_index-1].name;
+		}
     }
     get_player_costume(player_index) {
         dump_players("get_player_costume");
