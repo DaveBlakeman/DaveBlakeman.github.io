@@ -174,6 +174,10 @@ class KillerIsland {
                     }
                 }
             }
+            ],
+            "menus": {
+                supermath: this._formatMenu(["+", "-", "/", "*", "^", "sqrt"])
+            }
         };
     }
     initialise_game() {
